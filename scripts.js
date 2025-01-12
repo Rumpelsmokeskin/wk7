@@ -38,18 +38,22 @@ for(i = 0 ; i < names.length; i++){
  totalCharacters += names[i].length;
 
 }
-
+/* loop to calculate the average number of letters per name*/
 console.log(totalCharacters / names.length);
 
-console.log(names[1]);
+/*how to access first element of array*/
+console.log(names[0]);
+/*how to access last element of array*/
 console.log(names[names.length -1]);
 
+/* loop to iterate through array and concat names together*/
 let concatNames = "";
 for(let i = 0; i< names.length; i++){
 concatNames = concatNames.concat(names[i] + " ");
 }
 console.log(concatNames)
 
+/* create look to iterate through names array and add length of each name to array*/
 const nameLengths = [];
 let currentLength = 0;
 for (i = 0; i < names.length; i++){
@@ -58,11 +62,14 @@ nameLengths[i] = currentLength;
 console.log(nameLengths);
 }
 
+/* a loop to iterate over the nameLengths array to sum elements*/
 let nameLengthSum = 0;
 for(i=0; i<nameLengths.length; i++){
 nameLengthSum += nameLengths[i];
 console.log(nameLengthSum);
 }
+
+/* function that takes two parameters and returns word concatted to itself n times */
 let tempWord = "";
 const concatFunction = (word, n) => {
     for(i=0; i<n;i++){
@@ -72,6 +79,7 @@ const concatFunction = (word, n) => {
 }
 console.log(concatFunction(`hey`,5));
 
+/* function that concats first and last name with a space*/
 let fullName = "";
 const fullNameFunction = (firstName, lastName) => {
     fullName = `${firstName} ${lastName}`;
@@ -79,7 +87,18 @@ const fullNameFunction = (firstName, lastName) => {
 }
 console.log(fullNameFunction(`Josh`, `Watkins`));
 
+/* function that adds sum of elements to see if over 100 */
 const sumArray = [5, 15, 45, 4, 83];
+let addedArray = 0;
+const addArray = (array) => {
+    for (let i=0; i<array.length; i++){
+        addedArray += array[i];
+    }
+    return addedArray;
+}
+console.log(addArray(sumArray));
+
+/*function that takes the returns the average of the same array*/
 let sumArrayAverage = 0;
 const averageArrayFunction = (array) => {
     for (let i =0; i< array.length;i++){
@@ -90,6 +109,7 @@ const averageArrayFunction = (array) => {
 }
 console.log(averageArrayFunction(sumArray));
 
+/* a function that returns true is the average of first is greater than 2nd*/
 const sumArray1 = [3, 4, 7, 10, 24];
 const sumArray2 = [6, 10, 15, 5, 6];
 let sumArrayAverage1 = 0;
@@ -115,6 +135,7 @@ const averageArrayCompareFunction = (array1, array2) => {
 }
 console.log(averageArrayCompareFunction(sumArray1, sumArray2));
 
+/* function returns true if it is hot outside AND money in pocket is greater than 10.5*/
 const willBuyDrink = (isHotOutside, moneyInPocket) => {
     if (isHotOutside === true && moneyInPocket > 10.5){
         return true;
@@ -125,7 +146,9 @@ const willBuyDrink = (isHotOutside, moneyInPocket) => {
 
     console.log(willBuyDrink(true, 100));
 
+/* this is my own function that is the basis for a sauna lumber calculator*/
 
+    /*declaring variables*/
     let TGprofile = "horizontal";
     let saunaHeight = 84;
     let saunaWidth = 84;
@@ -134,7 +157,7 @@ const willBuyDrink = (isHotOutside, moneyInPocket) => {
     let woodCoverage = 4.2;
     
     
-    
+    /*defining function*/
     const lumberCount = (walls, height, width, depth, ceiling, coverage) =>{
     
         let sideWalls = 0;
@@ -143,6 +166,7 @@ const willBuyDrink = (isHotOutside, moneyInPocket) => {
         let finalOutput = "";
         let percentage = 15;
     
+        /*checking to see value of TGprofile to see if wall boards are oriented vertical or horizontal*/
         if(walls === "horizontal" || "vertical"){
             switch (walls){
                 case "horizontal":
@@ -189,7 +213,7 @@ const willBuyDrink = (isHotOutside, moneyInPocket) => {
              return finalOutput = `The total amount of boards required:
              Walls boards (L/R): ${sideWalls}
              Wall boards (F/B): ${frontBackWalls}
-             Ceiling boards: ${ceilingBoards}`
+             Ceiling boards: ${ceilingBoards}`;
     }
         console.log(lumberCount(TGprofile, saunaHeight, saunaWidth, saunaDepth, ceilingDirection, woodCoverage));
     
